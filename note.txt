@@ -1,0 +1,8 @@
+Put all of your images in the static/ directory. Then reference the image file with a leading slash
+
+
+![](/git/bestProPic_20-modified.png)
+ok.
+![](git/bestProPic_20-modified.png)
+not ok
+
