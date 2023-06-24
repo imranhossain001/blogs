@@ -3,7 +3,7 @@
   <head>
     
       <title>
-        How to set up time date manually in Arch Linux ::
+        how to control brightness in Arch Linux ::
         Imran Hossain
       </title>
     
@@ -11,17 +11,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="sudo timedatectl set-ntp true
-timedatectl set-timezone UTC
-Both time and date : date -s &amp;quot;19 APR 2012 11:14:00&amp;quot; Only date : date &#43;%Y%m%d -s &amp;quot;20120418&amp;quot; Only time : date &#43;%T -s &amp;quot;11:14:00&amp;quot; To set manually : # timedatectl set-time &amp;#34;YYYY-MM-DD HH:MM:SS&amp;#34; # timedatectl set-time &amp;#34;2013-01-08 18:18:18&amp;#34; # timedatectl status If the local time and UTC is different try with command line below: timedatectl set-timezone UTC
-To set automatically using ntp: # pacman -S ntp # ntpd -qg then Check using timedatectl status."
+  content="Via shading : # xrandr -q | grep connected xrandr --output eDP-1 --brightness 0.5 (eDP-1 is my monitor)
+Via backlight : # sudo vim /sys/class/backlight/intel_backlight/brightness
+### in /sys/class/drm you&amp;#39;ll find all displays ### /sys/class/drm/card0/card0-eDP-1/enabled check to see if it&amp;#39;s active or not. Via app : # sudo pacman -S light replace the lines of code in the i3wm .config file: bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness"
 />
 <meta
   name="keywords"
   content=""
 />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://imranhossain001.github.io/blogs/post/archdate/" />
+<link rel="canonical" href="https://imranhossain001.github.io/blogs/post/brightnessarch/" />
 
 
 
@@ -47,17 +46,17 @@ To set automatically using ntp: # pacman -S ntp # ntpd -qg then Check using time
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="How to set up time date manually in Arch Linux"/>
-<meta name="twitter:description" content="This is useful for setting up dates in linux"/>
+<meta name="twitter:title" content="how to control brightness in Arch Linux"/>
+<meta name="twitter:description" content="In my usages of using TTY in arch linux, I used the following methods to control brightness of monitor."/>
 
 
 
-<meta property="og:title" content="How to set up time date manually in Arch Linux" />
-<meta property="og:description" content="This is useful for setting up dates in linux" />
+<meta property="og:title" content="how to control brightness in Arch Linux" />
+<meta property="og:description" content="In my usages of using TTY in arch linux, I used the following methods to control brightness of monitor." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://imranhossain001.github.io/blogs/post/archdate/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-05-16T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-05-16T00:00:00+00:00" />
+<meta property="og:url" content="https://imranhossain001.github.io/blogs/post/brightnessarch/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-06-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-08T00:00:00+00:00" />
 
 
 
@@ -152,11 +151,11 @@ To set automatically using ntp: # pacman -S ntp # ntpd -qg then Check using time
   
 
   <article class="post">
-    <h1 class="post-title">How to set up time date manually in Arch Linux</h1>
+    <h1 class="post-title">how to control brightness in Arch Linux</h1>
     <div class="post-meta">
       
         <time class="post-date">
-          2021-05-16
+          2020-06-08
         </time>
 
         
@@ -185,70 +184,43 @@ To set automatically using ntp: # pacman -S ntp # ntpd -qg then Check using time
 
     <div class="post-content">
       
-      <p><code>sudo timedatectl set-ntp true</code></p>
-<p><code>timedatectl set-timezone UTC</code></p>
-<ul>
-<li>Both time and date :</li>
-</ul>
+      <h3 id="via-shading-">
+  Via shading :
+  <a href="#via-shading-" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <hr>
-<p><code>date -s &quot;19 APR 2012 11:14:00&quot; </code></p>
-<ul>
-<li>Only date :</li>
-</ul>
+<p><code>xrandr -q | grep connected</code>
+<code>xrandr --output eDP-1 --brightness 0.5</code>
+(eDP-1 is my monitor)</p>
+<h3 id="via-backlight-">
+  Via backlight :
+  <a href="#via-backlight-" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <hr>
-<p><code>date +%Y%m%d -s &quot;20120418&quot; </code></p>
-<ul>
-<li>Only time :</li>
-</ul>
+<p><code>sudo vim /sys/class/backlight/intel_backlight/brightness</code></p>
+<pre tabindex="0"><code>### in /sys/class/drm you&#39;ll find all displays
+### /sys/class/drm/card0/card0-eDP-1/enabled check to see if it&#39;s active or not.
+</code></pre><h3 id="via-app-">
+  Via app :
+  <a href="#via-app-" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <hr>
-<p><code>date +%T -s &quot;11:14:00&quot; </code></p>
-<ul>
-<li>To set manually :</li>
-</ul>
+<p><code>sudo pacman -S light</code>
+replace the lines of code in the i3wm .config file:
+<code>bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness</code>
+<code>bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness</code></p>
+<p><a href="https://cialu.net/brightness-control-not-work-i3wm/">link</a></p>
+<h3 id="via-i3bar-">
+  Via i3bar :
+  <a href="#via-i3bar-" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <hr>
-<pre tabindex="0"><code># timedatectl set-time &#34;YYYY-MM-DD HH:MM:SS&#34;
-# timedatectl set-time &#34;2013-01-08 18:18:18&#34;
-# timedatectl status
-</code></pre><p><em>If the local time and UTC is different try with command line below:</em>
-<code>timedatectl set-timezone UTC</code></p>
-<ul>
-<li>To set automatically using ntp:</li>
-</ul>
-<hr>
-<pre tabindex="0"><code># pacman -S ntp
-# ntpd -qg
-</code></pre><p>then Check using timedatectl status.
-When using ntpd -qg your system must be connected on internet, to get time date from server.</p>
-<ul>
-<li>Setting Hardware Clock :</li>
-</ul>
-<hr>
-<p>The hardware clock is the clock that runs in you PC hardware even if you disconnect it from the main power supply. This is because it has a lithium battery in the modern computers and another type of battery in the old ones.</p>
-<p>We&rsquo;ll see differences between hardware clock and system clock.</p>
-<p><strong>hardware clock&hellip;</strong>
-<code>hwclock --show</code>
-Will output something like this:
-(<em>Thu 19 Apr 2012 03:23:05 PM BOT  -0.785086 seconds</em>)</p>
-<p><strong>system clock&hellip;</strong>
-<code>date</code>
-Will output something like this:
-(<em>Thu Apr 19 15:26:41 BOT 2012</em>)</p>
-<ul>
-<li>To set the hardware clock to local time:</li>
-</ul>
-<hr>
-<p><code>hwclock --set --date=&quot;2012-04-19 16:45:05&quot; --localtime</code></p>
-<ul>
-<li>If you want to set it to UTC time use:</li>
-</ul>
-<hr>
-<p><code>hwclock --set --date=&quot;2011-04-19 20:45:05&quot;  --utc</code></p>
-<ul>
-<li>To set the timezone of your system clock do the following:</li>
-</ul>
-<hr>
-<p><code>cp /usr/share/zoneinfo/America/La_Paz /etc/localtime</code></p>
-<p><a href="https://wiki.archlinux.org/index.php/System_time">Arch wiki</a></p>
+<p>To construct our block, put the following lines to your i3blocks.conf :</p>
+<pre tabindex="0"><code>[backlight]
+command=xbacklight | sed -r &#39;s/.w+$/%/&#39;
+label=B
+interval=5
+</code></pre><p><a href="https://www.reddit.com/r/i3wm/comments/4qofyr/controling_screen_brightness/">reddit</a></p>
 
     </div>
     
@@ -263,16 +235,16 @@ Will output something like this:
           <div class="pagination__buttons">
             
               <span class="button previous">
-                <a href="https://imranhossain001.github.io/blogs/post/encryptluks1/">
+                <a href="https://imranhossain001.github.io/blogs/post/clonearch1/">
                   <span class="button__icon">←</span>
-                  <span class="button__text">Why not encrypting your whole server ?</span>
+                  <span class="button__text">Wanna clone existing Arch Linux installation ?</span>
                 </a>
               </span>
             
             
               <span class="button next">
-                <a href="https://imranhossain001.github.io/blogs/post/hibernatearch/">
-                  <span class="button__text">how to enable hibernation in arch linux</span>
+                <a href="https://imranhossain001.github.io/blogs/post/oldbiosgpt/">
+                  <span class="button__text">Tricking old BIOS into booting from GPT</span>
                   <span class="button__icon">→</span>
                 </a>
               </span>
