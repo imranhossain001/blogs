@@ -3,7 +3,7 @@
   <head>
     
       <title>
-        Hello Friend ::
+        How to set up time date manually in Arch Linux ::
         Imran Hossain
       </title>
     
@@ -11,15 +11,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="&amp;ldquo;Hello, friend?&amp;rdquo; That&amp;rsquo;s lame. Maybe I should give you a name&amp;hellip; But that&amp;rsquo;s a slippery slope. You&amp;rsquo;re only in my head. We have to remember that&amp;hellip; Shit. It&amp;rsquo;s actually happened. I&amp;rsquo;m talking to an imaginary person.
-— Mr. Robot S01E01"
+  content="sudo timedatectl set-ntp true
+timedatectl set-timezone UTC
+Both time and date : date -s &amp;quot;19 APR 2012 11:14:00&amp;quot; Only date : date &#43;%Y%m%d -s &amp;quot;20120418&amp;quot; Only time : date &#43;%T -s &amp;quot;11:14:00&amp;quot; To set manually : # timedatectl set-time &amp;#34;YYYY-MM-DD HH:MM:SS&amp;#34; # timedatectl set-time &amp;#34;2013-01-08 18:18:18&amp;#34; # timedatectl status If the local time and UTC is different try with command line below: timedatectl set-timezone UTC
+To set automatically using ntp: # pacman -S ntp # ntpd -qg then Check using timedatectl status."
 />
 <meta
   name="keywords"
   content=""
 />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://imranhossain001.github.io/blogs/post/hello/" />
+<link rel="canonical" href="https://imranhossain001.github.io/blogs/post/archdate/" />
 
 
 
@@ -45,17 +47,17 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hello Friend"/>
-<meta name="twitter:description" content="&#34;Hello, friend?&#34; That&#39;s lame. Maybe I should give you a name?"/>
+<meta name="twitter:title" content="How to set up time date manually in Arch Linux"/>
+<meta name="twitter:description" content="This is useful for setting up dates in linux"/>
 
 
 
-<meta property="og:title" content="Hello Friend" />
-<meta property="og:description" content="&#34;Hello, friend?&#34; That&#39;s lame. Maybe I should give you a name?" />
+<meta property="og:title" content="How to set up time date manually in Arch Linux" />
+<meta property="og:description" content="This is useful for setting up dates in linux" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://imranhossain001.github.io/blogs/post/hello/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2000-09-17T00:00:00+00:00" />
-<meta property="article:modified_time" content="2000-09-17T00:00:00+00:00" />
+<meta property="og:url" content="https://imranhossain001.github.io/blogs/post/archdate/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-05-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-05-16T00:00:00+00:00" />
 
 
 
@@ -150,11 +152,11 @@
   
 
   <article class="post">
-    <h1 class="post-title">Hello Friend</h1>
+    <h1 class="post-title">How to set up time date manually in Arch Linux</h1>
     <div class="post-meta">
       
         <time class="post-date">
-          2000-09-17
+          2021-05-16
         </time>
 
         
@@ -174,7 +176,7 @@
     
       <span class="post-tags">
         
-          <a href="https://imranhossain001.github.io/blogs/tags/talks/">#talks</a>&nbsp;
+          <a href="https://imranhossain001.github.io/blogs/tags/arch-linux/">#Arch Linux</a>&nbsp;
         
       </span>
     
@@ -183,17 +185,70 @@
 
     <div class="post-content">
       
-      <blockquote>
-<p>&ldquo;Hello, friend?&rdquo; That&rsquo;s lame.
-Maybe I should give you a name&hellip;
-But that&rsquo;s a slippery slope.
-You&rsquo;re only in my head.
-We have to remember that&hellip;
-Shit.
-It&rsquo;s actually happened.
-I&rsquo;m talking to an imaginary person.</p>
-<p><strong>— Mr. Robot S01E01</strong></p>
-</blockquote>
+      <p><code>sudo timedatectl set-ntp true</code></p>
+<p><code>timedatectl set-timezone UTC</code></p>
+<ul>
+<li>Both time and date :</li>
+</ul>
+<hr>
+<p><code>date -s &quot;19 APR 2012 11:14:00&quot; </code></p>
+<ul>
+<li>Only date :</li>
+</ul>
+<hr>
+<p><code>date +%Y%m%d -s &quot;20120418&quot; </code></p>
+<ul>
+<li>Only time :</li>
+</ul>
+<hr>
+<p><code>date +%T -s &quot;11:14:00&quot; </code></p>
+<ul>
+<li>To set manually :</li>
+</ul>
+<hr>
+<pre tabindex="0"><code># timedatectl set-time &#34;YYYY-MM-DD HH:MM:SS&#34;
+# timedatectl set-time &#34;2013-01-08 18:18:18&#34;
+# timedatectl status
+</code></pre><p><em>If the local time and UTC is different try with command line below:</em>
+<code>timedatectl set-timezone UTC</code></p>
+<ul>
+<li>To set automatically using ntp:</li>
+</ul>
+<hr>
+<pre tabindex="0"><code># pacman -S ntp
+# ntpd -qg
+</code></pre><p>then Check using timedatectl status.
+When using ntpd -qg your system must be connected on internet, to get time date from server.</p>
+<ul>
+<li>Setting Hardware Clock :</li>
+</ul>
+<hr>
+<p>The hardware clock is the clock that runs in you PC hardware even if you disconnect it from the main power supply. This is because it has a lithium battery in the modern computers and another type of battery in the old ones.</p>
+<p>We&rsquo;ll see differences between hardware clock and system clock.</p>
+<p><strong>hardware clock&hellip;</strong>
+<code>hwclock --show</code>
+Will output something like this:
+(<em>Thu 19 Apr 2012 03:23:05 PM BOT  -0.785086 seconds</em>)</p>
+<p><strong>system clock&hellip;</strong>
+<code>date</code>
+Will output something like this:
+(<em>Thu Apr 19 15:26:41 BOT 2012</em>)</p>
+<ul>
+<li>To set the hardware clock to local time:</li>
+</ul>
+<hr>
+<p><code>hwclock --set --date=&quot;2012-04-19 16:45:05&quot; --localtime</code></p>
+<ul>
+<li>If you want to set it to UTC time use:</li>
+</ul>
+<hr>
+<p><code>hwclock --set --date=&quot;2011-04-19 20:45:05&quot;  --utc</code></p>
+<ul>
+<li>To set the timezone of your system clock do the following:</li>
+</ul>
+<hr>
+<p><code>cp /usr/share/zoneinfo/America/La_Paz /etc/localtime</code></p>
+<p><a href="https://wiki.archlinux.org/index.php/System_time">Arch wiki</a></p>
 
     </div>
     
@@ -208,12 +263,19 @@ I&rsquo;m talking to an imaginary person.</p>
           <div class="pagination__buttons">
             
               <span class="button previous">
-                <a href="https://imranhossain001.github.io/blogs/post/systemdcommands/">
+                <a href="https://imranhossain001.github.io/blogs/post/ipynb/">
                   <span class="button__icon">←</span>
-                  <span class="button__text">My Most useful systemd commands</span>
+                  <span class="button__text">Wanna see your ipynb files in terminal?</span>
                 </a>
               </span>
             
+            
+              <span class="button next">
+                <a href="https://imranhossain001.github.io/blogs/post/clonearch1/">
+                  <span class="button__text">Wanna clone existing Arch Linux installation ?</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
             
           </div>
         </div>

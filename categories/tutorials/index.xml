@@ -34,5 +34,45 @@
         </description>
     </item>
     
+    <item>
+      <title>How to set up time date manually in Arch Linux</title>
+      <link>https://imranhossain001.github.io/blogs/post/archdate/</link>
+      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://imranhossain001.github.io/blogs/post/archdate/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          This is useful for setting up dates in linux
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>PACMAN commands</title>
+      <link>https://imranhossain001.github.io/blogs/post/pacman/</link>
+      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://imranhossain001.github.io/blogs/post/pacman/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          My most useful Pacman commands in Arch Linux
+          
+        
+        </description>
+    </item>
+    
   </channel>
 </rss>
