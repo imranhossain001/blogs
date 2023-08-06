@@ -33,5 +33,25 @@
         </description>
     </item>
     
+    <item>
+      <title>how to enable hibernation in arch linux</title>
+      <link>https://imranhossain001.github.io/blogs/post/hibernatearch/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://imranhossain001.github.io/blogs/post/hibernatearch/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Hibernation enables persisting OS state for years without the worry of electricity loss.
+          
+        
+        </description>
+    </item>
+    
   </channel>
 </rss>

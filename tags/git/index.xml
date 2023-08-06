@@ -15,43 +15,19 @@
     
     
     <item>
-      <title>Git Demysitified</title>
+      <title>A comprehensive git guide</title>
       <link>https://imranhossain001.github.io/blogs/post/git-demystified/</link>
       <pubDate>Tue, 16 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://imranhossain001.github.io/blogs/post/git-demystified/</guid>
       <description>
         
-          
-          
-          
-        
-        
-        
-          This document is supposed to be a complete and concise guide to understand the mechanics of Git.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>GitHub usernames</title>
-      <link>https://imranhossain001.github.io/blogs/post/github-usernames/</link>
-      <pubDate>Mon, 15 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://imranhossain001.github.io/blogs/post/github-usernames/</guid>
-      <description>
-        
-          
-          
+          &lt;img src=&#34;https://imranhossain001.github.io/blogs/img/git.png&#34;/&gt;
           
         
         
         
-          How hard is it to change GitHub username to a short word?
-Last week I decided to change mine from a 14 letter word to some 4-6 letter word. Don&amp;rsquo;t ask me why. I was fed up typing long words!
-The new username should ideally be &amp;mdash;
-Comfortable in speaking Easily pronounceable Faster to type Visually good looking The hunt # My quest began manually with initial candidates as ashr, friday, ranj, aran, etc.
+          Full git tutorial in one page
           
         
         </description>

@@ -34,25 +34,6 @@
     </item>
     
     <item>
-      <title>Why not encrypting your whole server ?</title>
-      <link>https://imranhossain001.github.io/blogs/post/encryptluks1/</link>
-      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://imranhossain001.github.io/blogs/post/encryptluks1/</guid>
-      <description>
-        
-          &lt;img src=&#34;https://imranhossain001.github.io/blogs/img/arch.png&#34;/&gt;
-          
-        
-        
-        
-          Using LUKS, whole linux can be encrypted in many ways. Here&#39;s the method I use in my Arch Linux
-          
-        
-        </description>
-    </item>
-    
-    <item>
       <title>How to set up time date manually in Arch Linux</title>
       <link>https://imranhossain001.github.io/blogs/post/archdate/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
@@ -93,7 +74,7 @@
     </item>
     
     <item>
-      <title>Wanna clone existing Arch Linux installation ?</title>
+      <title>How to clone existing Arch Linux installation ?</title>
       <link>https://imranhossain001.github.io/blogs/post/clonearch1/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
