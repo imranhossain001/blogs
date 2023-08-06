@@ -2,8 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://imranhossain001.github.io/blogs/post/software-development-art-science/</loc>
+    <lastmod>2023-08-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://imranhossain001.github.io/blogs/categories/</loc>
-    <lastmod>2023-05-16T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://imranhossain001.github.io/blogs/</loc>
+    <lastmod>2023-08-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://imranhossain001.github.io/blogs/post/</loc>
+    <lastmod>2023-08-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://imranhossain001.github.io/blogs/tags/software/</loc>
+    <lastmod>2023-08-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://imranhossain001.github.io/blogs/categories/software-engineering/</loc>
+    <lastmod>2023-08-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://imranhossain001.github.io/blogs/tags/</loc>
+    <lastmod>2023-08-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://imranhossain001.github.io/blogs/tags/git/</loc>
     <lastmod>2023-05-16T00:00:00+00:00</lastmod>
@@ -11,19 +29,10 @@
     <loc>https://imranhossain001.github.io/blogs/post/git-demystified/</loc>
     <lastmod>2023-05-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://imranhossain001.github.io/blogs/</loc>
-    <lastmod>2023-05-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://imranhossain001.github.io/blogs/post/</loc>
-    <lastmod>2023-05-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://imranhossain001.github.io/blogs/showcase/showcase2/</loc>
     <lastmod>2023-05-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://imranhossain001.github.io/blogs/showcase/</loc>
-    <lastmod>2023-05-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://imranhossain001.github.io/blogs/tags/</loc>
     <lastmod>2023-05-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://imranhossain001.github.io/blogs/categories/tutorials/</loc>
@@ -44,13 +53,7 @@
     <loc>https://imranhossain001.github.io/blogs/tags/talks/</loc>
     <lastmod>2023-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://imranhossain001.github.io/blogs/tags/software/</loc>
-    <lastmod>2023-05-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://imranhossain001.github.io/blogs/post/software-development-triangle/</loc>
-    <lastmod>2023-05-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://imranhossain001.github.io/blogs/categories/software-engineering/</loc>
     <lastmod>2023-05-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://imranhossain001.github.io/blogs/tags/astro/</loc>
