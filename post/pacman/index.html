@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        PACMAN commands ::
+        Imran Hossain
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="yay -Sw $(paclist core extra community multilib blackarch chaotic-aur | awk &amp;#39;{print $1}&amp;#39;) PACKAGE SORTING
+sort packages sizewise : expac -s &amp;quot;%-30n %m&amp;quot; | sort -rhk 2 | less expac --timefmt=&#39;%Y-%m-%d %T&#39; &#39;%l\t%n %v&#39; | sort | tail -200 | nl PACKAGE MANAGEMENT
+total official package number : yay -Q | wc -l
+total native package number : yay -Qqn | wc -l
+total unofficial package number : yay -Qm | wc -l"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://imranhossain001.github.io/blogs/post/pacman/" />
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blogs/css/style.css" />
+
+<link rel="stylesheet" href="https://imranhossain001.github.io/blogs/style.css" />
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://imranhossain001.github.io/blogs/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="https://imranhossain001.github.io/blogs/img/favicon.png" />
+
+
+<link href="/blogs/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/blogs/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/blogs/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/blogs/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/blogs/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/blogs/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PACMAN commands"/>
+<meta name="twitter:description" content="My most useful Pacman commands in Arch Linux"/>
+
+
+
+<meta property="og:title" content="PACMAN commands" />
+<meta property="og:description" content="My most useful Pacman commands in Arch Linux" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imranhossain001.github.io/blogs/post/pacman/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-05-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-16T00:00:00+00:00" />
+
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >cd /home/imran</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/blogs/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/blogs/categories/">Categories</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/blogs/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/blogs/categories/">Categories</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <article class="post">
+    <h1 class="post-title">PACMAN commands</h1>
+    <div class="post-meta">
+      
+        <time class="post-date">
+          2020-05-16
+        </time>
+
+        
+          
+        
+      
+
+      
+        <span class="post-author"
+          >— Written by Imran Hossain</span
+        >
+
+
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          <a href="https://imranhossain001.github.io/blogs/tags/arch-linux/">#Arch Linux</a>&nbsp;
+        
+      </span>
+    
+
+    
+      <figure class="post-cover">
+  
+    <img src="https://imranhossain001.github.io/blogs/img/pacman.png" alt="PACMAN commands"/>
+  
+
+  
+</figure>
+
+    
+
+    <div class="post-content">
+      
+      <pre tabindex="0"><code>yay -Sw $(paclist core extra community multilib blackarch chaotic-aur | awk &#39;{print $1}&#39;)
+</code></pre><p><em><strong>PACKAGE SORTING</strong></em></p>
+<hr>
+<ul>
+<li>sort packages sizewise :</li>
+</ul>
+<hr>
+<p><code>expac -s &quot;%-30n %m&quot; | sort -rhk 2 | less</code>
+<code>expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl </code></p>
+<p><em><strong>PACKAGE MANAGEMENT</strong></em></p>
+<hr>
+<ul>
+<li>total official package number :</li>
+</ul>
+<hr>
+<p><code>yay -Q | wc -l</code></p>
+<ul>
+<li>total native package number :</li>
+</ul>
+<hr>
+<p><code>yay -Qqn | wc -l</code></p>
+<ul>
+<li>total unofficial package number :</li>
+</ul>
+<hr>
+<p><code>yay -Qm | wc -l</code></p>
+<ul>
+<li>all orphans packages :</li>
+</ul>
+<hr>
+<p><code>pacman -Qdt | wc -l</code></p>
+<ul>
+<li>saves all package names to file :</li>
+</ul>
+<hr>
+<p><code>paclist core community extra multilib blackarch | awk '{print $1}' &gt;&gt; list.txt</code></p>
+<ul>
+<li>list all (installed + uninstalled) packages from a specific repo :</li>
+</ul>
+<hr>
+<p><code>pacman -Sl &lt;repo&gt;</code></p>
+<ul>
+<li>list all packages explicitly installed and not required as dependencies :</li>
+</ul>
+<hr>
+<p><code>pacman -Qet</code></p>
+<ul>
+<li>list all the files owned by package :</li>
+</ul>
+<hr>
+<p><code>pacman -Ql package_name</code></p>
+<ul>
+<li>filter output to packages installed as dependencies of that packageme :</li>
+</ul>
+<hr>
+<p><code>pacman -Qd package_name</code></p>
+<ul>
+<li>check that all files owned by the given package(s) are present on the system :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Qk | grep package_name</code></p>
+<ul>
+<li>check that all files owned by the given package(s) are present on the system :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Qkk | grep package_name</code></p>
+<ul>
+<li>check if there is any package owns or not :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Qo /usr/lib/python3.6/site-packages/requests/init_.py</code></p>
+<ul>
+<li>create a list of explicitly installed packages in alphabetical order and save them in a text file :</li>
+</ul>
+<hr>
+<p><code>pacman -Qqe &gt; pkglist.txt</code></p>
+<ul>
+<li>ignore packages in pacman update :</li>
+</ul>
+<hr>
+<p><code>--ignore pkg1,pkg2,pkg3</code></p>
+<ul>
+<li>install a local package, or from a website :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -U /path/to/the/package</code></p>
+<ul>
+<li>draw the optional dependency tree :</li>
+</ul>
+<hr>
+<p><code>pactree  &lt;package_name&gt;</code></p>
+<ul>
+<li>draw the optional dependency tree once :</li>
+</ul>
+<hr>
+<p><code>pactree -u &lt;package_name&gt;</code></p>
+<p><em><strong>UNINSTALL PACKAGE</strong></em></p>
+<hr>
+<ul>
+<li>remove a package and its dependencies :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Rns package_name</code></p>
+<ul>
+<li>remove a package with its dependencies and the packages that rely on those dependencies :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Rsc package_name</code></p>
+<ul>
+<li>remove a package that is required by another package without removing the dependent package, use this command :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Rdd package_name</code></p>
+<ul>
+<li>remove all the packages on the newly installed system that are not mentioned in the backup list :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Rsu $(comm -23 &lt;(pacman -Qq | sort) &lt;(sort pkglist.txt))</code></p>
+<ul>
+<li>remove all orphan packages :</li>
+</ul>
+<hr>
+<p><code>yay -Rns $(yay -Qtdq)</code></p>
+<p><em><strong>UPDATE SYSTEM</strong></em></p>
+<hr>
+<ul>
+<li>update the system :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Syu</code></p>
+<ul>
+<li>update all packages, then downgrade all affected packages :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Suu</code></p>
+<ul>
+<li>full system upgraded without any issues :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Syyu</code></p>
+<ul>
+<li>only download update :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Syuw</code></p>
+<ul>
+<li>update offline :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Su</code></p>
+<ul>
+<li>update the database :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Syy</code></p>
+<p><em><strong>CACHE AND DATABASE MANAGEMENT</strong></em></p>
+<hr>
+<ul>
+<li>updating the system using different storage :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Syu --cachedir /mnt</code></p>
+<ul>
+<li>updating the system using different db and storage :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Syu -b /mnt/var/lib/pacman/ --cachedir /mnt</code></p>
+<ul>
+<li>delete all cached versions of installed and uninstalled packages except for the most recent 3 :</li>
+</ul>
+<hr>
+<p><code>paccache -rvk3</code></p>
+<ul>
+<li>remove all cached versions of uninstalled packages :</li>
+</ul>
+<hr>
+<p><code>sudo paccache -ruk0</code></p>
+<ul>
+<li>removes all previous versions :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Sc</code></p>
+<ul>
+<li>leave nothing in the cache :</li>
+</ul>
+<hr>
+<p><code>pacman -Scc</code></p>
+<p><em><strong>PACKAGE SEARCH</strong></em></p>
+<hr>
+<ul>
+<li>search the string in the repo :</li>
+</ul>
+<hr>
+<p><code>pacman -Ss</code></p>
+<ul>
+<li>check what nvidia packages you have installed with pacman -Qs nvidia :</li>
+</ul>
+<hr>
+<p><code>pacman -Qs</code></p>
+<ul>
+<li>search the package if it&rsquo;s installed or not :</li>
+</ul>
+<hr>
+<p><code>pacman -Q</code></p>
+<ul>
+<li>search the exact package in the repo :</li>
+</ul>
+<hr>
+<p><code>pacman -Sii</code></p>
+<ul>
+<li>search the exact package in the PC :</li>
+</ul>
+<hr>
+<p><code>pacman -Qii</code></p>
+<ul>
+<li>search for available updates :</li>
+</ul>
+<hr>
+<p><code>pacman -Qu</code></p>
+<ul>
+<li>retrieve a list of the files installed by a package :</li>
+</ul>
+<hr>
+<p><code>pacman -Ql -Fl -Qk -Qkk</code></p>
+<ul>
+<li>see what packages belong to the gnome group :</li>
+</ul>
+<hr>
+<p><code>pacman -Sg gnome</code></p>
+<ul>
+<li>search for package file names in remote packages :</li>
+</ul>
+<hr>
+<p><code>pacman -Fs string1 string2</code></p>
+<ul>
+<li>search locally for that file :</li>
+</ul>
+<hr>
+<p><code>pacman -Fs file_name</code></p>
+<p><em><strong>REINSTALL ALL PACKAGES</strong></em></p>
+<hr>
+<ul>
+<li>only downloads repo packages :</li>
+</ul>
+<hr>
+<p><code>paclist core community extra multilib blackarch | awk '{print $1}' | yay -Sw -</code></p>
+<ul>
+<li>
+<p>reinstalls all pacakages :
+<code>paclist core community extra multilib blackarch  | awk '{print $1}' | yay -S -</code></p>
+</li>
+<li>
+<p>reinstalls all native packages :</p>
+</li>
+</ul>
+<hr>
+<p><code>sudo pacman -Qqn | pacman -S -</code></p>
+<ul>
+<li>only downloads the offical packages :</li>
+</ul>
+<hr>
+<p><code>yay -Sw $(pacman -Qqn)</code></p>
+<ul>
+<li>install packages from a list :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -S --needed - &lt; list.txt</code></p>
+<ul>
+<li>install the package and it&rsquo;s optional dependencies once :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -S $(pactree -u exfat-utils)</code></p>
+<ul>
+<li>install packages from the backup list :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -S - &lt; pkglist.txt</code></p>
+<ul>
+<li>remove the foreign packages such as AUR packages :</li>
+</ul>
+<hr>
+<p><code>sudo pacman -S $(comm -12 &lt;(pacman -Slq | sort) &lt;(sort pkglist.txt))</code></p>
+<hr>
+<p><a href="https://wiki.manjaro.org/index.php?title=Pacman_Tips">Manjaro wiki</a></p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://imranhossain001.github.io/blogs/post/oldbiosgpt/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Tricking old BIOS into booting from GPT</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="https://imranhossain001.github.io/blogs/post/systemdcommands/">
+                  <span class="button__text">My Most useful systemd commands</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </article>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >cd /home/imran</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+			<span>©2023  Imran Hossain <a href="/"><b>Contact me</b></b></a></span>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script type="text/javascript" src="/blogs/bundle.min.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

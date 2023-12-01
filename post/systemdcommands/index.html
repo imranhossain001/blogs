@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        My Most useful systemd commands ::
+        Imran Hossain
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="systemctl list-unit-files | grep enabled systemctl status systemctl list-unit-files --state=enabled,disabled,failed systemctl --type=service
+list all networks : networkctl status --all networkctl list man systemd.network.5
+list all enabled services : systemctl list-unit-files | grep enabled systemctl list-unit-files --state=enabled
+see all of the running services : systemctl list-units --type service --state running command systemctl --no-page --no-legend --plain -t service --state=running
+see the overview of all active and failed services : systemctl list-units --type service --state running,failed systemctl --failed"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://imranhossain001.github.io/blogs/post/systemdcommands/" />
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blogs/css/style.css" />
+
+<link rel="stylesheet" href="https://imranhossain001.github.io/blogs/style.css" />
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://imranhossain001.github.io/blogs/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="https://imranhossain001.github.io/blogs/img/favicon.png" />
+
+
+<link href="/blogs/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/blogs/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/blogs/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/blogs/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/blogs/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/blogs/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="My Most useful systemd commands"/>
+<meta name="twitter:description" content="As of my 5&#43; years of Linux experience, these are my most useful systemd commands collections."/>
+
+
+
+<meta property="og:title" content="My Most useful systemd commands" />
+<meta property="og:description" content="As of my 5&#43; years of Linux experience, these are my most useful systemd commands collections." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imranhossain001.github.io/blogs/post/systemdcommands/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-04-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-18T00:00:00+00:00" />
+
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >cd /home/imran</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/blogs/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/blogs/categories/">Categories</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/blogs/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/blogs/categories/">Categories</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <article class="post">
+    <h1 class="post-title">My Most useful systemd commands</h1>
+    <div class="post-meta">
+      
+        <time class="post-date">
+          2020-04-18
+        </time>
+
+        
+          
+        
+      
+
+      
+        <span class="post-author"
+          >— Written by Imran Hossain</span
+        >
+
+
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          <a href="https://imranhossain001.github.io/blogs/tags/arch-linux/">#Arch Linux</a>&nbsp;
+        
+      </span>
+    
+
+    
+      <figure class="post-cover">
+  
+    <img src="https://imranhossain001.github.io/blogs/img/systemd.png" alt="My Most useful systemd commands"/>
+  
+
+  
+</figure>
+
+    
+
+    <div class="post-content">
+      
+      <p><code>systemctl list-unit-files | grep enabled</code>
+<code>systemctl status</code>
+<code>systemctl list-unit-files --state=enabled,disabled,failed</code>
+<code>systemctl --type=service</code></p>
+<ul>
+<li>list all networks :</li>
+</ul>
+<hr>
+<p><code>networkctl status --all</code>
+<code>networkctl list</code>
+<code>man systemd.network.5</code></p>
+<ul>
+<li>list all enabled services :</li>
+</ul>
+<hr>
+<p><code>systemctl list-unit-files | grep enabled</code>
+<code>systemctl list-unit-files --state=enabled</code></p>
+<ul>
+<li>see all of the running services :</li>
+</ul>
+<hr>
+<p><code>systemctl list-units --type service --state running</code>
+<code>command systemctl --no-page --no-legend --plain -t service --state=running</code></p>
+<ul>
+<li>see the overview of all active and failed services :</li>
+</ul>
+<hr>
+<p><code>systemctl list-units --type service --state running,failed</code>
+<code>systemctl --failed</code></p>
+<ul>
+<li>analyze systemd boot process :</li>
+</ul>
+<hr>
+<p><code>systemd-analyze</code>
+<code>systemd-analyze blame</code>
+<code>systemd-analyze critical-chain</code></p>
+<ul>
+<li>analyze security features :</li>
+</ul>
+<hr>
+<p><code>systemd-analyze security tor.service</code></p>
+<ul>
+<li>check if a unit is enabled or not :</li>
+</ul>
+<hr>
+<p><code>systemctl is-enabled crond.service</code></p>
+<ul>
+<li>check if a unit is running or not :</li>
+</ul>
+<hr>
+<p><code>systemctl status firewalld.service</code></p>
+<ul>
+<li>list all services (enabled,disabled) :</li>
+</ul>
+<hr>
+<p><code>systemctl list-unit-files --type=service</code></p>
+<ul>
+<li>start, restart, stop, reload a service :</li>
+</ul>
+<hr>
+<p><code>systemctl start httpd.service</code>
+<code>systemctl restart httpd.service</code>
+<code>systemctl stop httpd.service</code>
+<code>systemctl reload httpd.service</code></p>
+<ul>
+<li>mask (making it impossible to start) or unmask a service :</li>
+</ul>
+<hr>
+<p><code>systemctl mask httpd.service</code>
+<code>ln -s '/dev/null' '/etc/systemd/system/httpd.service' </code>
+<code>systemctl unmask httpd.service</code>
+<code>rm '/etc/systemd/system/httpd.service' </code></p>
+<ul>
+<li>Kill a service using :</li>
+</ul>
+<hr>
+<p><code>systemctl kill httpd</code>
+<code>systemctl status httpd</code></p>
+<ul>
+<li>list all system mount points :</li>
+</ul>
+<hr>
+<p><code>systemctl list-unit-files --type=mount</code></p>
+<ul>
+<li>list all available system sockets :</li>
+</ul>
+<hr>
+<p><code>systemctl list-unit-files --type=socket</code></p>
+<ul>
+<li>get the current cpu Shares of a Service :</li>
+</ul>
+<hr>
+<p><code>systemctl show -p CPUShares httpd.service</code></p>
+<ul>
+<li>limit Share of a service to 2000 CPUShares :</li>
+</ul>
+<hr>
+<p><code>systemctl set-property httpd.service CPUShares=2000</code>
+<code>systemctl show -p CPUShares httpd.service</code></p>
+<ul>
+<li>check all configuration details of a service :</li>
+</ul>
+<hr>
+<p><code>systemctl show httpd</code></p>
+<ul>
+<li>analyze critical chain for a services :</li>
+</ul>
+<hr>
+<p><code>systemd-analyze critical-chain httpd.service</code></p>
+<ul>
+<li>get a list of dependencies for a services :</li>
+</ul>
+<hr>
+<p><code>systemctl list-dependencies httpd.service</code></p>
+<ul>
+<li>list control groups hierarchically :</li>
+</ul>
+<hr>
+<p><code>systemd-cgls</code></p>
+<ul>
+<li>list control group according to CPU, memory, Input and Output :</li>
+</ul>
+<hr>
+<p><code>systemd-cgtop</code></p>
+<ul>
+<li>start system rescue mode :</li>
+</ul>
+<hr>
+<p><code>systemctl rescue</code></p>
+<ul>
+<li>enter into emergency mode :</li>
+</ul>
+<hr>
+<p><code>systemctl emergency</code></p>
+<ul>
+<li>get current run levels in used :</li>
+</ul>
+<hr>
+<p><code>systemctl get-default</code></p>
+<ul>
+<li>start Runlevel 5 or graphical mode :</li>
+</ul>
+<hr>
+<p><code>systemctl isolate runlevel5.target</code>  or
+<code>systemctl isolate graphical.target</code></p>
+<ul>
+<li>start Runlevel 3 or multiuser mode (commandline) :</li>
+</ul>
+<hr>
+<p><code>systemctl isolate runlevel3.target</code>  or
+<code>systemctl isolate multiuser.target</code></p>
+<ul>
+<li>set multiusermode or graphical mode as default runlevel :</li>
+</ul>
+<hr>
+<p><code>systemctl set-default runlevel3.target</code>
+<code>systemctl set-default runlevel5.target</code>
+<code>man runlevel</code></p>
+<ul>
+<li>see hard disk space occupied by the logs :</li>
+</ul>
+<hr>
+<p><code>sudo journalctl --disk-usage</code></p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://imranhossain001.github.io/blogs/post/pacman/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">PACMAN commands</span>
+                </a>
+              </span>
+            
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </article>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >cd /home/imran</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+			<span>©2023  Imran Hossain <a href="/"><b>Contact me</b></b></a></span>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script type="text/javascript" src="/blogs/bundle.min.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
